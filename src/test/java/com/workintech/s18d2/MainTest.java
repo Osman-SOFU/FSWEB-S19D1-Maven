@@ -187,7 +187,7 @@ class MainTest {
     @DisplayName("FruitService::delete() should return the deleted fruit")
     void testDeleteFruitService() {
         when(mockFruitRepository.findById(anyLong())).thenReturn(Optional.of(sampleFruitForFruitServiceTest));
-        doNothing().when(mockFruitRepository).delete(any(Fruit.class));
+        doNothing().when(mockFruitRepository).deleteById(anyLong());
 
         Fruit deletedFruit = fruitService.delete(1L);
 

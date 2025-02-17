@@ -114,7 +114,7 @@ class ApplicationPropertiesAndControllerTests {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(sampleFruit)))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.name", is("Apple")));
+                .andExpect(jsonPath("$.data.name", is("Apple")));
     }
 
     @Test
